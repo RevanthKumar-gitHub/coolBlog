@@ -25,6 +25,7 @@ const App = () => {
   const fetchUser = async () => {
     try {
       const { data } = await axios.get("/users/profile");
+      console.log(data);
       if (data.success) {
         dispatch(setUser(data.user));
         dispatch(setIsAuthenticated(true));
@@ -33,6 +34,7 @@ const App = () => {
       dispatch(setUser({}));
       dispatch(setIsAuthenticated(false));
       toast.error(error.response.data.message);
+      console.log(error);
     }
   };
   const fetchBlogs = async () => {
