@@ -13,7 +13,6 @@ const sendToken = (user, message, res, statusCode) => {
     ),
     httpOnly: true, 
     secure: true, 
-    sameSite: 'strict', 
   };
   res.status(statusCode).cookie("token", token, options).json({
     success: true,
