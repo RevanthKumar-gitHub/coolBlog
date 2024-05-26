@@ -12,7 +12,7 @@ const sendToken = (user, message, res, statusCode) => {
     httpOnly: true, 
     secure: true, 
     maxAge: 24 * 60 * 60 * 1000,
-    sameSite: 'None',
+    sameSite: 'Lax',
   };
   res.status(statusCode).cookie("token", token, options).json({
     success: true,

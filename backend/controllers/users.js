@@ -89,10 +89,9 @@ const logout = (req, res) => {
   res
     .status(200)
     .cookie("token", "", {
-      expires: new Date(Date.now()),
       httpOnly: true,
       secure: true,
-      sameSite: 'None',
+      sameSite: 'Lax',
     })
     .json({
       success: true,
