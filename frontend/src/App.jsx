@@ -25,7 +25,6 @@ const App = () => {
   const fetchUser = async () => {
     try {
       const { data } = await axios.get("/users/profile");
-      console.log(data);
       if (data.success) {
         dispatch(setUser(data.user));
         dispatch(setIsAuthenticated(true));

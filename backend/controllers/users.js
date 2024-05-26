@@ -92,7 +92,6 @@ const logout = (req, res) => {
       expires: new Date(Date.now()),
       httpOnly: true,
       secure: true,
-      sameSite: "strict",
     })
     .json({
       success: true,
