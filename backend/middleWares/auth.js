@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const expressAsyncHandler = require("express-async-handler");
 const db = require("../db");
+const dotenv = require("dotenv").config();
 //AUTHENTICATION
 const isAuthenticated = expressAsyncHandler(async (req, res, next) => {
   const { token } = req.cookies;
