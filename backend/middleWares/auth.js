@@ -4,6 +4,7 @@ const db = require("../db");
 //AUTHENTICATION
 const isAuthenticated = expressAsyncHandler(async (req, res, next) => {
   const { token } = req.cookies;
+  console.log(req.cookies);
   if (!token) {
     res.status(400);
     throw new Error("User is not authenticated!");
