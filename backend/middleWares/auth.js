@@ -12,7 +12,6 @@ const isAuthenticated = expressAsyncHandler(async (req, res, next) => {
   const { rows } = await db.query("SELECT * FROM users WHERE user_id= $1", [
     decodedUser.user_id,
   ]);
-  console.log(decodedUser);
   const user = {
     user_id: rows[0].user_id,
     name: rows[0].name,
