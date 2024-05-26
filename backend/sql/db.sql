@@ -15,17 +15,21 @@ CREATE TABLE
     blogs (
         blog_id SERIAL PRIMARY KEY,
         title VARCHAR(50) NOT NULL,
-        intro VARCHAR(200) NOT NULL,
+        intro TEXT NOT NULL,
         main_image_url VARCHAR(200) NOT NULL,
         para_one_title VARCHAR(50),
-        para_one_desc VARCHAR(200),
+        para_one_desc TEXT,
         para_one_image_url VARCHAR(200),
         para_two_title VARCHAR(50),
-        para_two_desc VARCHAR(200),
+        para_two_desc TEXT,
         para_two_image_url VARCHAR(200),
         category VARCHAR(20) NOT NULL,
         createdBy INT REFERENCES users (user_id) NOT NULL,
         author_name VARCHAR(32) NOT NULL,
         author_avatar VARCHAR(200),
-        created_on DATE DEFAULT CURRENT_DATE
+        created_on DATE DEFAULT CURRENT_DATE,
+        main_image_id VARCHAR(100) NOT NULL,
+        para_one_image_id VARCHAR(100),
+        para_two_image_id VARCHAR(100),
+        publish BOOLEAN NOT NULL
     );
