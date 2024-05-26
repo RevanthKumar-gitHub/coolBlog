@@ -11,6 +11,9 @@ const sendToken = (user, message, res, statusCode) => {
     expires: new Date(
       Date.now() + process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000
     ),
+    httpOnly: true, 
+    secure: true, 
+    sameSite: 'strict', 
   };
   res.status(statusCode).cookie("token", token, options).json({
     success: true,
