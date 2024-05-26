@@ -33,7 +33,6 @@ const App = () => {
       dispatch(setUser({}));
       dispatch(setIsAuthenticated(false));
       toast.error(error.response.data.message);
-      console.log(error);
     }
   };
   const fetchBlogs = async () => {
